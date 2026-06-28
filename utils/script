@@ -1,0 +1,27 @@
+unset GITHUB_TOKEN && gh auth login -h github.com -p https -s delete_repo -w
+
+gh repo view <name> --web
+terraform plan -out=something
+history -c
+
+terraform console -state="../state/terraform.tfstate"
+gh repo delete <name of repo> --yes
+terraform plan -refresh-only
+terraform state rm -dry-run <name of repp>
+terraform plan -refresh-only -auto-approve
+
+{ for k,v in github_repository.tfatoz_repo : k => v.name}
+[for k,v in module.repos : keys(v.clone-urls)]
+[for k,v in module.repos.prod.clone-urls : keys(v.clone-urls)]
+
+ssh-keygen -t ed25519 -C "aws.acc.hema@gmail.com"
+gh repo deploy-key add "<the path of key>" -R hpkanithi/tfatoz-repo-backend -w
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/tfatozkey
+<go to directory>
+git remote set-url origin <the repo url>
+git remote -v
+
+git@github.com:hpkanithi/tfatoz-repo-backend.git
+
+terraform graph -type=plan | dot -Tpng > <name>.png
