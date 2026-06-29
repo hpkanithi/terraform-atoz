@@ -1,0 +1,16 @@
+# Portfolio
+
+## About Me
+
+<img src = "${avatar}" style = "windth: 10%; height: auto;">
+
+Hi I'm ${name}. Check out my repos!
+
+## Projects 
+
+|Project Name               |   Web Page                                                             | Link                                                              |
+%{for repo_key, repo_value in repos ~}
+|${repo_key}   | [Web Page](${repo_value.pages-url})   |[GitHub](${repo_value.http-clone-url})
+%{ endfor ~}
+
+${date} ${name}

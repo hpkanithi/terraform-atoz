@@ -1,0 +1,7 @@
+{
+    "infra": {
+        "filename": "main.tf",
+        "lang": "terraform",
+        "pages": false
+    }
+}
