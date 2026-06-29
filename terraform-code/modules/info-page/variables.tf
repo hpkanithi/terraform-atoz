@@ -1,7 +1,7 @@
-variable "repo" {
-  description = ""
-  type        = string
-}
+# variable "repo" {
+#   description = ""
+#   type        = string
+# }
 
 variable "repos" {
   description = ""
