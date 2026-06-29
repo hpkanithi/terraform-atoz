@@ -11,11 +11,11 @@ locals {
       filename = "main.py",
       pages    = false
     },
-    # frontend = {
-    #   lang     = "javascript",
-    #   filename = "main.js",
-    #   pages    = true
-    # }
+    frontend = {
+      lang     = "javascript",
+      filename = "main.js",
+      pages    = true
+    }
   }
 }
 
