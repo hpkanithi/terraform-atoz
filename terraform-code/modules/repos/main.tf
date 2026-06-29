@@ -1,4 +1,3 @@
-
 resource "local_file" "repos" {
   content = jsonencode(local.repos)
   filename = "${path.module}/repos.json"
@@ -9,7 +8,8 @@ module "repos" {
   for_each = var.environments
   repo_max = 9
   env      = each.key
-  repos    = jsondecode(file("repos.json"))
+  # repos    = jsondecode(file("repos.json"))
+  repos = local.repos
 }
 
 module "key" {
