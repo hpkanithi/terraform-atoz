@@ -1,5 +1,5 @@
 resource "local_file" "repos" {
-  content = jsonencode(local.repos)
+  content  = jsonencode(local.repos)
   filename = "${path.module}/repos.json"
 }
 

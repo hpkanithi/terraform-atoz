@@ -1,3 +1,17 @@
+data "terraform_remote_state" "repos" {
+  backend = "remote"
+  config = {
+    organization = "hpk-hpc-16"
+    workspaces = {
+      name = "hpk-hpc-16"
+    }
+  }
+}
+
+locals {
+  repos = { for k,v in data.terraform_remote_state.repos.outputs.clone_urls["prod"].clone-urls : k => v}
+}
+
 resource "github_repository" "info" {
   name        = "tfatoz_info_page"
   description = "Repo info for info-page"
